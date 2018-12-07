@@ -18,9 +18,12 @@ public class ThreeSumTest {
 
         List<Integer> data = loadData();
         ThreeSum threeSum = new ThreeSum();
-        int triplesCount = threeSum.countTriples(data);
+        StopWatch stopWatch = new StopWatch();
 
-        assertThat(triplesCount).isEqualTo(1);
+        int triplesCount = threeSum.countTriplesFast(data);
+        System.out.println("Total time, ms :" + stopWatch.elapsedTime());
+
+        assertThat(triplesCount).isEqualTo(8000000);
     }
 
     private List<Integer> loadData() throws FileNotFoundException
